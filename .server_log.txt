@@ -1,0 +1,379 @@
+DEBUG:asyncio:Using proactor: IocpProactor
+INFO:     Started server process [19896]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52819 - "GET /v1/healthz HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52821 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52823 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52827 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52829 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52831 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52833 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52837 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52839 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52843 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52845 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52847 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52849 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52851 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52853 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52855 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52857 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52860 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52862 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52864 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52866 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52868 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52870 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52872 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52874 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52876 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52878 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52881 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56942 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56944 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56851 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56853 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56855 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56857 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56859 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56861 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56863 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56865 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56867 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56869 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56871 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56874 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56876 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58492 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58494 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52606 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52608 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52610 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52612 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52614 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52616 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52618 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52620 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52624 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52627 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52630 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52632 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52634 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52636 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52638 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52640 - "POST /v1/context HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52642 - "POST /v1/context HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_013_corporate_thali_planning']
+DEBUG:vera:tick trigger trg_013_corporate_thali_planning -> True
+DEBUG:vera:tick merchant_id=m_006_southindiancafe_restaurant_bangalore customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=restaurants category=True
+DEBUG:vera:tick suppression_key=planning:m_006:corp_thali:2026-W17 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:52644 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_016_kids_yoga_program_drafting']
+DEBUG:vera:tick trigger trg_016_kids_yoga_program_drafting -> True
+DEBUG:vera:tick merchant_id=m_008_zenyoga_gym_chennai customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=gyms category=True
+DEBUG:vera:tick suppression_key=planning:m_008:kids_yoga:2026-W17 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:52646 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_076_appointment_tomorrow_m_019_karim_salon_lu']
+DEBUG:vera:tick trigger trg_076_appointment_tomorrow_m_019_karim_salon_lu -> True
+DEBUG:vera:tick merchant_id=m_019_karim_salon_lucknow customer_id=c_075_aditya_for_m_019_karim_salon_lucknow
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=salons category=True
+DEBUG:vera:tick suppression_key=appointment_tomorrow:m_019_karim_salon_lucknow:gen_76 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:52648 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_077_appointment_tomorrow_m_020_renu_salon_luc']
+DEBUG:vera:tick trigger trg_077_appointment_tomorrow_m_020_renu_salon_luc -> True
+DEBUG:vera:tick merchant_id=m_020_renu_salon_lucknow customer_id=c_080_riya_for_m_020_renu_salon_lucknow
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=salons category=True
+DEBUG:vera:tick suppression_key=appointment_tomorrow:m_020_renu_salon_lucknow:gen_77 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:52650 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_020_summer_demand_shift']
+DEBUG:vera:tick trigger trg_020_summer_demand_shift -> True
+DEBUG:vera:tick merchant_id=m_009_apollo_pharmacy_jaipur customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=pharmacies category=True
+DEBUG:vera:tick suppression_key=season:summer:m_009:2026 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:52652 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_022_cde_webinar_dentists']
+DEBUG:vera:tick trigger trg_022_cde_webinar_dentists -> True
+DEBUG:vera:tick merchant_id=m_001_drmeera_dentist_delhi customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=dentists category=True
+DEBUG:vera:tick suppression_key=cde:dentists:2026-05-02 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:52654 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_019_chronic_refill_grandfather']
+DEBUG:vera:tick trigger trg_019_chronic_refill_grandfather -> True
+DEBUG:vera:tick merchant_id=m_009_apollo_pharmacy_jaipur customer_id=c_013_grandfather_for_m009
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=pharmacies category=True
+DEBUG:vera:tick suppression_key=refill:c_013_grandfather_for_m009:2026-04 suppressed=False
+ERROR:vera:tick compose failed for trigger trg_019_chronic_refill_grandfather
+Traceback (most recent call last):
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\main.py", line 173, in tick
+    result = compose(
+        category=category,
+    ...<2 lines>...
+        customer=customer,
+    )
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 1056, in compose
+    body, cta, rationale = _compose_merchant_message(category, merchant, best)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 773, in _compose_merchant_message
+    if tscope == "customer" and customer:
+       ^^^^^^
+NameError: name 'tscope' is not defined
+INFO:     127.0.0.1:52656 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_081_chronic_refill_due_m_011_dr_sameer_dent']
+DEBUG:vera:tick trigger trg_081_chronic_refill_due_m_011_dr_sameer_dent -> True
+DEBUG:vera:tick merchant_id=m_011_dr_sameer_dentist_bangalore customer_id=c_044_vivaan_for_m_011_dr_sameer_dentist_bangalore
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=dentists category=True
+DEBUG:vera:tick suppression_key=chronic_refill_due:m_011_dr_sameer_dentist_bangalore:gen_81 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:52658 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_023_competitor_opened_dentist']
+DEBUG:vera:tick trigger trg_023_competitor_opened_dentist -> True
+DEBUG:vera:tick merchant_id=m_001_drmeera_dentist_delhi customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=dentists category=True
+DEBUG:vera:tick suppression_key=competitor:m_001:smile_studio suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:54620 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_056_competitor_opened_m_006_southindiancaf']
+DEBUG:vera:tick trigger trg_056_competitor_opened_m_006_southindiancaf -> True
+DEBUG:vera:tick merchant_id=m_006_southindiancafe_restaurant_bangalore customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=restaurants category=True
+DEBUG:vera:tick suppression_key=competitor_opened:m_006_southindiancafe_restaurant_bangalore:gen_56 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:55591 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_008_curious_ask_studio11']
+DEBUG:vera:tick trigger trg_008_curious_ask_studio11 -> True
+DEBUG:vera:tick merchant_id=m_003_studio11_salon_hyderabad customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=salons category=True
+DEBUG:vera:tick suppression_key=curious_ask:m_003:2026-W17 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55593 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_096_curious_ask_due_m_006_southindiancaf']
+DEBUG:vera:tick trigger trg_096_curious_ask_due_m_006_southindiancaf -> True
+DEBUG:vera:tick merchant_id=m_006_southindiancafe_restaurant_bangalore customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=restaurants category=True
+DEBUG:vera:tick suppression_key=curious_ask_due:m_006_southindiancafe_restaurant_bangalore:gen_96 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55595 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_015_winback_rashmi']
+DEBUG:vera:tick trigger trg_015_winback_rashmi -> True
+DEBUG:vera:tick merchant_id=m_007_powerhouse_gym_bangalore customer_id=c_010_rashmi_for_m007
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=gyms category=True
+DEBUG:vera:tick suppression_key=winback:c_010_rashmi_for_m007 suppressed=False
+ERROR:vera:tick compose failed for trigger trg_015_winback_rashmi
+Traceback (most recent call last):
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\main.py", line 173, in tick
+    result = compose(
+        category=category,
+    ...<2 lines>...
+        customer=customer,
+    )
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 1056, in compose
+    body, cta, rationale = _compose_merchant_message(category, merchant, best)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 773, in _compose_merchant_message
+    if tscope == "customer" and customer:
+       ^^^^^^
+NameError: name 'tscope' is not defined
+INFO:     127.0.0.1:55597 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_071_customer_lapsed_soft_m_014_dr_asha_dentis']
+DEBUG:vera:tick trigger trg_071_customer_lapsed_soft_m_014_dr_asha_dentis -> True
+DEBUG:vera:tick merchant_id=m_014_dr_asha_dentist_chandigarh customer_id=c_055_reyansh_for_m_014_dr_asha_dentist_chandigarh
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=dentists category=True
+DEBUG:vera:tick suppression_key=customer_lapsed_soft:m_014_dr_asha_dentist_chandigarh:gen_71 suppressed=False
+ERROR:vera:tick compose failed for trigger trg_071_customer_lapsed_soft_m_014_dr_asha_dentis
+Traceback (most recent call last):
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\main.py", line 173, in tick
+    result = compose(
+        category=category,
+    ...<2 lines>...
+        customer=customer,
+    )
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 1056, in compose
+    body, cta, rationale = _compose_merchant_message(category, merchant, best)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 773, in _compose_merchant_message
+    if tscope == "customer" and customer:
+       ^^^^^^
+NameError: name 'tscope' is not defined
+INFO:     127.0.0.1:55599 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_072_customer_lapsed_soft_m_049_komal_pharmaci']
+DEBUG:vera:tick trigger trg_072_customer_lapsed_soft_m_049_komal_pharmaci -> True
+DEBUG:vera:tick merchant_id=m_049_komal_pharmacie_lucknow customer_id=c_193_reyansh_for_m_049_komal_pharmacie_lucknow
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=pharmacies category=True
+DEBUG:vera:tick suppression_key=customer_lapsed_soft:m_049_komal_pharmacie_lucknow:gen_72 suppressed=False
+ERROR:vera:tick compose failed for trigger trg_072_customer_lapsed_soft_m_049_komal_pharmaci
+Traceback (most recent call last):
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\main.py", line 173, in tick
+    result = compose(
+        category=category,
+    ...<2 lines>...
+        customer=customer,
+    )
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 1056, in compose
+    body, cta, rationale = _compose_merchant_message(category, merchant, best)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 773, in _compose_merchant_message
+    if tscope == "customer" and customer:
+       ^^^^^^
+NameError: name 'tscope' is not defined
+INFO:     127.0.0.1:55601 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_025_dormancy_glamour']
+DEBUG:vera:tick trigger trg_025_dormancy_glamour -> True
+DEBUG:vera:tick merchant_id=m_004_glamour_salon_pune customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=salons category=True
+DEBUG:vera:tick suppression_key=dormant:m_004:30d suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55603 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_046_dormant_with_vera_m_029_anand_restaura']
+DEBUG:vera:tick trigger trg_046_dormant_with_vera_m_029_anand_restaura -> True
+DEBUG:vera:tick merchant_id=m_029_anand_restaurant_chandigarh customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=restaurants category=True
+DEBUG:vera:tick suppression_key=dormant_with_vera:m_029_anand_restaurant_chandigarh:gen_46 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:55605 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_006_festival_diwali']
+DEBUG:vera:tick trigger trg_006_festival_diwali -> True
+DEBUG:vera:tick merchant_id=m_003_studio11_salon_hyderabad customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=salons category=True
+DEBUG:vera:tick suppression_key=festival:diwali:2026:m_003 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55607 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_061_festival_upcoming_m_037_pooja_gym_bang']
+DEBUG:vera:tick trigger trg_061_festival_upcoming_m_037_pooja_gym_bang -> True
+DEBUG:vera:tick merchant_id=m_037_pooja_gym_bangalore customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=gyms category=True
+DEBUG:vera:tick suppression_key=festival_upcoming:m_037_pooja_gym_bangalore:gen_61 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:55609 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_021_unverified_gbp_sunrise']
+DEBUG:vera:tick trigger trg_021_unverified_gbp_sunrise -> True
+DEBUG:vera:tick merchant_id=m_010_sunrisepharm_pharmacy_lucknow customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=pharmacies category=True
+DEBUG:vera:tick suppression_key=unverified:m_010 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55611 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_010_ipl_match_delhi']
+DEBUG:vera:tick trigger trg_010_ipl_match_delhi -> True
+DEBUG:vera:tick merchant_id=m_005_pizzajunction_restaurant_delhi customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=restaurants category=True
+DEBUG:vera:tick suppression_key=ipl:m_005:2026-04-26 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55613 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_012_milestone_mylari']
+DEBUG:vera:tick trigger trg_012_milestone_mylari -> True
+DEBUG:vera:tick merchant_id=m_006_southindiancafe_restaurant_bangalore customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=restaurants category=True
+DEBUG:vera:tick suppression_key=milestone:m_006:reviews_150 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55615 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_041_milestone_reached_m_032_mukesh_restaur']
+DEBUG:vera:tick trigger trg_041_milestone_reached_m_032_mukesh_restaur -> True
+DEBUG:vera:tick merchant_id=m_032_mukesh_restaurant_pune customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=restaurants category=True
+DEBUG:vera:tick suppression_key=milestone_reached:m_032_mukesh_restaurant_pune:gen_41 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:55617 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_004_perf_dip_bharat']
+DEBUG:vera:tick trigger trg_004_perf_dip_bharat -> True
+DEBUG:vera:tick merchant_id=m_002_bharat_dentist_mumbai customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=dentists category=True
+DEBUG:vera:tick suppression_key=perf_dip:m_002_bharat_dentist_mumbai:calls:2026-W17 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55619 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_031_perf_dip_m_023_sushma_salon_p']
+DEBUG:vera:tick trigger trg_031_perf_dip_m_023_sushma_salon_p -> True
+DEBUG:vera:tick merchant_id=m_023_sushma_salon_pune customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=salons category=True
+DEBUG:vera:tick suppression_key=perf_dip:m_023_sushma_salon_pune:gen_31 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:55621 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_024_perf_spike_zen']
+DEBUG:vera:tick trigger trg_024_perf_spike_zen -> True
+DEBUG:vera:tick merchant_id=m_008_zenyoga_gym_chennai customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=gyms category=True
+DEBUG:vera:tick suppression_key=perf_spike:m_008:calls:2026-W17 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55623 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_036_perf_spike_m_010_sunrisepharm_p']
+DEBUG:vera:tick trigger trg_036_perf_spike_m_010_sunrisepharm_p -> True
+DEBUG:vera:tick merchant_id=m_010_sunrisepharm_pharmacy_lucknow customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=pharmacies category=True
+DEBUG:vera:tick suppression_key=perf_spike:m_010_sunrisepharm_pharmacy_lucknow:gen_36 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:55625 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_003_recall_due_priya']
+DEBUG:vera:tick trigger trg_003_recall_due_priya -> True
+DEBUG:vera:tick merchant_id=m_001_drmeera_dentist_delhi customer_id=c_001_priya_for_m001
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=dentists category=True
+DEBUG:vera:tick suppression_key=recall:c_001_priya_for_m001:6mo suppressed=False
+ERROR:vera:tick compose failed for trigger trg_003_recall_due_priya
+Traceback (most recent call last):
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\main.py", line 173, in tick
+    result = compose(
+        category=category,
+    ...<2 lines>...
+        customer=customer,
+    )
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 1056, in compose
+    body, cta, rationale = _compose_merchant_message(category, merchant, best)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aman\OneDrive\Desktop\projects\Vera_magicpin\app\engine.py", line 773, in _compose_merchant_message
+    if tscope == "customer" and customer:
+       ^^^^^^
+NameError: name 'tscope' is not defined
+INFO:     127.0.0.1:55627 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_066_recall_due_m_008_zenyoga_gym_ch']
+DEBUG:vera:tick trigger trg_066_recall_due_m_008_zenyoga_gym_ch -> True
+DEBUG:vera:tick merchant_id=m_008_zenyoga_gym_chennai customer_id=c_034_diya_for_m_008_zenyoga_gym_chennai
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=gyms category=True
+DEBUG:vera:tick suppression_key=recall_due:m_008_zenyoga_gym_chennai:gen_66 suppressed=False
+DEBUG:vera:tick compose result action=none
+INFO:     127.0.0.1:55629 - "POST /v1/tick HTTP/1.1" 200 OK
+DEBUG:vera:tick now=2026-04-26T10:06:00Z available=['trg_002_compliance_dci_radiograph']
+DEBUG:vera:tick trigger trg_002_compliance_dci_radiograph -> True
+DEBUG:vera:tick merchant_id=m_001_drmeera_dentist_delhi customer_id=None
+DEBUG:vera:tick merchant=True
+DEBUG:vera:tick category_slug=dentists category=True
+DEBUG:vera:tick suppression_key=compliance:dci_radiograph:2026 suppressed=False
+DEBUG:vera:tick compose result action=send
+INFO:     127.0.0.1:55631 - "POST /v1/tick HTTP/1.1" 200 OK
