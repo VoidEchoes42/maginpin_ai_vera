@@ -1,6 +1,7 @@
-"""Vera Message Engine — FastAPI application.
+"""Vera Message Engine — Flask application.
 
 Implements the exact API contract specified in challenge-testing-brief.md.
+Uses Flask instead of FastAPI to avoid pydantic version conflicts on Render.
 """
 
 from __future__ import annotations
@@ -11,9 +12,7 @@ import time
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
-from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field, ValidationError
+from flask import Flask, jsonify, request
 
 from app.engine import compose
 from app.state import (
@@ -28,7 +27,7 @@ from app.state import (
     uptime_seconds,
 )
 
-app = FastAPI(title="Vera Message Engine", version="1.0.0")
+app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger("vera")
 START = time.time()
@@ -53,89 +52,70 @@ METADATA = {
 
 
 # ---------------------------------------------------------------------------
-# Schemas
-# ---------------------------------------------------------------------------
-
-class CtxBody(BaseModel):
-    scope: str = Field(..., description="One of: category, merchant, customer, trigger")
-    context_id: str
-    version: int = Field(..., ge=1)
-    payload: Dict[str, Any]
-    delivered_at: str
-
-
-class TickBody(BaseModel):
-    now: str
-    available_triggers: List[str] = Field(default_factory=list)
-
-
-class ReplyBody(BaseModel):
-    conversation_id: str
-    merchant_id: Optional[str] = None
-    customer_id: Optional[str] = None
-    from_role: str = Field(..., description="merchant | customer")
-    message: str
-    received_at: str
-    turn_number: int = Field(..., ge=1)
-
-
-# ---------------------------------------------------------------------------
 # Endpoints
 # ---------------------------------------------------------------------------
 
-@app.get("/v1/healthz")
-async def healthz():
+@app.route("/v1/healthz", methods=["GET"])
+def healthz():
     counts = get_context_counts()
     for scope in ("category", "merchant", "customer", "trigger"):
         counts.setdefault(scope, 0)
-    return {
+    return jsonify({
         "status": "ok",
         "uptime_seconds": uptime_seconds(),
         "contexts_loaded": counts,
-    }
+    })
 
 
-@app.get("/v1/metadata")
-async def metadata():
-    return METADATA
+@app.route("/v1/metadata", methods=["GET"])
+def metadata():
+    return jsonify(METADATA)
 
 
-@app.post("/v1/context")
-async def push_context(body: CtxBody):
-    if body.scope not in ("category", "merchant", "customer", "trigger"):
-        return JSONResponse(
-            status_code=400,
-            content={"accepted": False, "reason": "invalid_scope", "details": f"scope must be one of category/merchant/customer/trigger, got: {body.scope}"},
-        )
+@app.route("/v1/context", methods=["POST"])
+def push_context():
+    body = request.get_json(force=True)
+    if not body:
+        return jsonify({"accepted": False, "reason": "invalid_json", "details": "empty body"}), 400
 
-    existing_version = get_context_version(body.scope, body.context_id)
-    if existing_version is not None and existing_version >= body.version:
-        return JSONResponse(
-            status_code=409,
-            content={"accepted": False, "reason": "stale_version", "current_version": existing_version},
-        )
+    scope = body.get("scope")
+    if scope not in ("category", "merchant", "customer", "trigger"):
+        return jsonify({
+            "accepted": False, "reason": "invalid_scope",
+            "details": f"scope must be one of category/merchant/customer/trigger, got: {scope}"
+        }), 400
 
-    result = store_context(body.scope, body.context_id, body.version, body.payload)
+    context_id = body.get("context_id")
+    version = body.get("version")
+    payload = body.get("payload")
+
+    if not context_id or version is None or payload is None:
+        return jsonify({"accepted": False, "reason": "missing_fields", "details": "context_id, version, and payload are required"}), 400
+
+    existing_version = get_context_version(scope, context_id)
+    if existing_version is not None and existing_version >= version:
+        return jsonify({"accepted": False, "reason": "stale_version", "current_version": existing_version}), 409
+
+    result = store_context(scope, context_id, version, payload)
     if result.get("stale"):
-        return JSONResponse(
-            status_code=409,
-            content={"accepted": False, "reason": "stale_version", "current_version": result["current_version"]},
-        )
+        return jsonify({"accepted": False, "reason": "stale_version", "current_version": result["current_version"]}), 409
 
-    return {
+    return jsonify({
         "accepted": True,
-        "ack_id": f"ack_{body.scope}_{body.context_id}_v{body.version}",
+        "ack_id": f"ack_{scope}_{context_id}_v{version}",
         "stored_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-    }
+    })
 
 
-@app.post("/v1/tick")
-async def tick(body: TickBody):
+@app.route("/v1/tick", methods=["POST"])
+def tick():
+    body = request.get_json(force=True) or {}
+    now_str = body.get("now", datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"))
+    available_triggers = body.get("available_triggers", [])
+    log.debug("tick now=%s available=%s", now_str, available_triggers)
+
     actions = []
-    now_str = body.now or datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-    log.debug("tick now=%s available=%s", now_str, body.available_triggers)
-
-    for tid in body.available_triggers:
+    for tid in available_triggers:
         trigger = get_context("trigger", tid)
         log.debug("tick trigger %s -> %s", tid, bool(trigger))
         if not trigger:
@@ -156,19 +136,16 @@ async def tick(body: TickBody):
         category = get_context("category", category_slug)
         log.debug("tick category_slug=%s category=%s", category_slug, bool(category))
         if not category:
-            # fallback: no category context, skip
             continue
 
         customer = get_context("customer", customer_id) if customer_id else None
 
-        # Suppression check
         sk = trigger.get("suppression_key", "")
         sup = is_suppressed(sk)
         log.debug("tick suppression_key=%s suppressed=%s", sk, sup)
         if sk and sup:
             continue
 
-        # Compose
         try:
             result = compose(
                 category=category,
@@ -185,13 +162,11 @@ async def tick(body: TickBody):
         if action == "none":
             continue
 
-        # Build conversation id
         if customer_id:
             conv_id = f"conv_{customer_id}_{tid}"
         else:
             conv_id = f"conv_{merchant_id}_{tid}"
 
-        # Record conversation state
         store_conversation(conv_id, {
             "ts": now_str,
             "from": "vera",
@@ -217,31 +192,33 @@ async def tick(body: TickBody):
         if len(actions) >= 20:
             break
 
-    return {"actions": actions}
+    return jsonify({"actions": actions})
 
 
-@app.post("/v1/reply")
-async def reply(body: ReplyBody):
-    merchant_id = body.merchant_id or ""
-    customer_id = body.customer_id
+@app.route("/v1/reply", methods=["POST"])
+def reply():
+    body = request.get_json(force=True) or {}
+    conversation_id = body.get("conversation_id", "")
+    merchant_id = body.get("merchant_id", "")
+    customer_id = body.get("customer_id")
+    from_role = body.get("from_role", "merchant")
+    message = body.get("message", "")
+    received_at = body.get("received_at", datetime.now(timezone.utc).isoformat())
+    turn_number = body.get("turn_number", 1)
 
     merchant = get_context("merchant", merchant_id) if merchant_id else {}
     category_slug = merchant.get("category_slug", "")
     category = get_context("category", category_slug) if category_slug else {}
 
     trigger: Dict[str, Any] = {"scope": "merchant", "kind": "active_planning_intent", "suppression_key": ""}
-    if customer_id:
-        customer = get_context("customer", customer_id)
-    else:
-        customer = None
+    customer = get_context("customer", customer_id) if customer_id else None
 
-    # Load prior conversation
-    history = get_conversation(body.conversation_id)
-    store_conversation(body.conversation_id, {
-        "ts": body.received_at,
-        "from": body.from_role,
-        "body": body.message,
-        "turn_number": body.turn_number,
+    history = get_conversation(conversation_id)
+    store_conversation(conversation_id, {
+        "ts": received_at,
+        "from": from_role,
+        "body": message,
+        "turn_number": turn_number,
     })
 
     result = compose(
@@ -249,23 +226,31 @@ async def reply(body: ReplyBody):
         merchant=merchant,
         trigger=trigger,
         customer=customer,
-        conversation_id=body.conversation_id,
-        turn_number=body.turn_number,
-        merchant_reply=body.message,
+        conversation_id=conversation_id,
+        turn_number=turn_number,
+        merchant_reply=message,
     )
 
     action = result.get("action", "send")
 
     if action == "end":
-        return {"action": "end", "rationale": result.get("rationale", "")}
+        return jsonify({"action": "end", "rationale": result.get("rationale", "")})
 
     if action == "wait":
-        return {"action": "wait", "wait_seconds": int(result.get("wait_seconds", 1800)), "rationale": result.get("rationale", "")}
+        return jsonify({
+            "action": "wait",
+            "wait_seconds": int(result.get("wait_seconds", 1800)),
+            "rationale": result.get("rationale", ""),
+        })
 
-    body_text = result.get("body", "")
-    return {
+    return jsonify({
         "action": "send",
-        "body": body_text,
+        "body": result.get("body", ""),
         "cta": result.get("cta", "open_ended"),
         "rationale": result.get("rationale", ""),
-    }
+    })
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8001))
+    app.run(host="0.0.0.0", port=port, debug=False)
